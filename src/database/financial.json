@@ -1,0 +1,69 @@
+[{
+    "id": 1,
+    "userId": 1,
+    "financialData": [
+        {
+        "id": 1,
+        "price": 900,
+        "typesOfExpenses": "Casa",
+        "date": "2021-01-18T21:36:59.095Z",
+        "name": "Alugel"
+    },
+    {
+        "id": 3,
+        "price": 1500,
+        "typesOfExpenses": "Casa",
+        "date": "2021-02-18T21:36:59.095Z",
+        "name": "Comida"
+    },
+    {
+        "id": 4,
+        "price": 200,
+        "typesOfExpenses": "Casa",
+        "date": "2022-01-18T22:36:59.095Z",
+        "name": "Luz"
+    },
+    {
+        "id": 5,
+        "price": 500,
+        "typesOfExpenses": "Otros",
+        "date": "2024-01-18T22:36:59.095Z",
+        "name": "Placer"
+    }]
+},
+{
+    "id": 2,
+    "userId": 10,
+    "financialData": [
+        {
+        "id": 1,
+        "price": 200,
+        "typesOfExpenses": "Casa",
+        "date": "2021-01-18T21:36:59.095Z",
+        "name": "Alugel"
+    },
+    {
+        "id": 3,
+        "price": 5000,
+        "typesOfExpenses": "Casa",
+        "date": "2021-02-18T22:36:59.095Z",
+        "name": "Comida"
+    },
+    {
+        "id": 4,
+        "price":800,
+        "typesOfExpenses": "Casa",
+        "date": "2024-01-18T23:36:59.095Z",
+        "name": "Luz"
+    },
+    {
+        "id": 5,
+        "price":800,
+        "typesOfExpenses": "Casa",
+        "date": "2025-01-18T23:36:59.095Z",
+        "name": "Luz"
+    }]
+}
+
+]
+    
