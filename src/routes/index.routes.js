@@ -10,6 +10,7 @@ routes.patch('/update-user/:id',userController.updateUser)
 
 // company
 routes.get('/finance-total/:userId',financialController.getTotalFinancialMonthAndYear)
+routes.delete('/finance/:userId/:financialId',financialController.deleteFinancial)
 
 
 
