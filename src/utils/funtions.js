@@ -17,7 +17,9 @@ const createOrUpdateDataJson = (fileName,data)=>{
 }
 const getValuesByDates = (list)=>{
     const listValuesUser = list.map(item=>{
+        
         const date= new Date(item.date)
+        
         return {
             year: date.getFullYear(),
             month: date.getMonth(),
@@ -30,68 +32,67 @@ const getValuesByDates = (list)=>{
     
     const listValueByYears = noDuplicatedYears.map(year=>{
         let totalYear = {}
-       
         const listMonth = []
         const financialByYears = listValuesUser.filter(item=>{
                     if (item.year === year){
                         listMonth.push(item.month)
                         return item
-
                     }
                 })   
         if (financialByYears.length > 1) {
             const notRepeatMonth = [...new Set(listMonth)]
-            const listMontValue = notRepeatMonth.map(month =>{
-                
+            
+            const listMontValue = notRepeatMonth.map(month =>{ 
                 let totalMonth = 0
-
                 const valuesMonth = financialByYears.filter(itemMonth =>{
-                    if (itemMonth.month === month) {
+                    if (itemMonth.month === month) {                        
                         return itemMonth.price
                     }
                 } )
-                
-                if (valuesMonth.length > 1) 
-                    totalMonth = valuesMonth.reduce((itemA,itemB)=> itemA.price+itemB.price)
+
+                if (valuesMonth.length > 1) {
+                    const reducer = (prev,next) => {
+                        return {
+                            price: prev.price + next.price
+                        }
+                    }
+                    totalMonth = valuesMonth.reduce(reducer)
+                    
+                }
                     
                 if (valuesMonth.length === 1) {
                     const [singleValue] = valuesMonth
                     totalMonth = singleValue.price
                 }
-
+                
                return {
                 month: getMonthTranslate(month),
-                total: totalMonth,
+                total: totalMonth.price,
 
                }    
             })
-
             
-                 
-            totalYear.total = financialByYears.reduce((itemA,itemB)=> itemA.price+itemB.price )
+            const reducer = (prev,next) => {
+                return {
+                    price: prev.price + next.price
+                }
+            }
+            totalYear.total = financialByYears.reduce(reducer).price
             totalYear.year = year
             totalYear.months = listMontValue
-
+            
         }
 
         if (financialByYears.length === 1) {
             const [financialItem] = financialByYears
             totalYear.total = financialItem.price
             totalYear.year = financialItem.year 
-            totalYear.months = {month:getMonthTranslate(financialItem.month), total: financialItem.price }
-
-            
+            totalYear.months = {month:getMonthTranslate(financialItem.month), total: financialItem.price }          
         }
-        
         return totalYear
-       
     })
     return (listValueByYears);
-    
-
-    
 }
-
 module.exports = {
     getDataJson,
     createOrUpdateDataJson,
