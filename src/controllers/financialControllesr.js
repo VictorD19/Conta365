@@ -157,7 +157,6 @@ module.exports = {
             existFinancialData?.financialData.push(objectFinancial);
           });
           
-          console.log(financial);
           
         if (!financial.indexFinancial) {
           financialDataJson.push(existFinancialData);
@@ -165,7 +164,6 @@ module.exports = {
           createOrUpdateDataJson("financial", financialDataJson);
           return res.json({ message: "Registros financieros agregados  com successo" });
         }
-        console.log(financialDataJson);
 
         financialDataJson[financial.indexFinancial] = existFinancialData;
         createOrUpdateDataJson("financial", financialDataJson);
