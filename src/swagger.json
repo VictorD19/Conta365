@@ -13,6 +13,9 @@
   "paths": {
     "/v1/user/{id}": {
       "get": {
+        "tags": [
+          "Usuario"
+        ],
         "description": "Retorna os dados de um usuario pelo id.",
         "parameters": [
           {
@@ -34,6 +37,9 @@
     },
     "/v1/create-user": {
       "post": {
+        "tags": [
+          "Usuario"
+        ],
         "description": "Cria um usuario..",
         "parameters": [
           {
@@ -70,6 +76,9 @@
     },
     "/v1/update-user/{id}": {
       "patch": {
+        "tags": [
+          "Usuario"
+        ],
         "description": "Atualiza dados de um usuario, sendo eles o name ou email.",
         "parameters": [
           {
@@ -108,6 +117,9 @@
     },
     "/v1/finance-total/{userId}": {
       "get": {
+        "tags": [
+          "Financiero"
+        ],
         "description": "Retorna o total de valores por mes/ano",
         "parameters": [
           {
@@ -134,6 +146,9 @@
     },
     "/v1/finance/{userId}/{financialId}": {
       "delete": {
+        "tags": [
+          "Financiero"
+        ],
         "description": "Deleta um usuario atravez do id",
         "parameters": [
           {
@@ -161,6 +176,9 @@
     },
     "/v1/finance/{userId}": {
       "post": {
+        "tags": [
+          "Financiero"
+        ],
         "description": "Registra dados inseridos atravez de um .xlsx",
         "consumes": [
           "multipart/form-data"

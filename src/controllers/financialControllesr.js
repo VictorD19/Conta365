@@ -9,6 +9,7 @@ const userService = require("../service/user.service");
 
 module.exports = {
   async getTotalFinancialMonthAndYear(req, res) {
+    // #swagger.tags = ['Financiero']
     // #swagger.description = 'Retorna o total de valores por mes/ano'
 
     const { userId } = req.params;
@@ -48,6 +49,7 @@ module.exports = {
     }
   },
   async deleteFinancial(req, res) {
+    // #swagger.tags = ['Financiero']
     // #swagger.description = 'Deleta um usuario atravez do id'
 
     const { userId, financialId } = req.params;
@@ -92,6 +94,7 @@ module.exports = {
    
   },
   async setFinancialData(req, res) {
+    // #swagger.tags = ['Financiero']
     // #swagger.description = 'Registra dados inseridos atravez de um .xlsx'
     /*
           #swagger.consumes = ['multipart/form-data']  

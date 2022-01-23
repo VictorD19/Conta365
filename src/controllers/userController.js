@@ -3,6 +3,7 @@ const { getDataJson, createOrUpdateDataJson } = require("../utils/funtions");
 
 module.exports = {
   async getUserById(req, res) {
+    // #swagger.tags = ['Usuario']
     // #swagger.description = 'Retorna os dados de um usuario pelo id.'
     const { id } = req.params;
     try {
@@ -17,6 +18,7 @@ module.exports = {
   
   },
   async createUser(req, res) {
+    // #swagger.tags = ['Usuario']
     // #swagger.description = 'Cria um usuario..'
     /*  #swagger.parameters['obj'] = {
                 in: 'body',
@@ -48,6 +50,8 @@ module.exports = {
     }
   },
   async updateUser(req, res) {
+    // #swagger.tags = ['Usuario']
+
     // #swagger.description = 'Atualiza dados de um usuario, sendo eles o name ou email.'
     /*  #swagger.parameters['obj'] = {
                 in: 'body',
